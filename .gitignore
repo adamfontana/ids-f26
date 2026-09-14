@@ -6,6 +6,15 @@
 *.html
 /presentations/.gitignore
 
+# LaTeX syllabus build products
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+/syllabus.pdf
+/syllabus.tex
+
 # Jupyter
 .ipynb_checkpoints/
 
