@@ -35,6 +35,73 @@ The slide deck is the substantive contribution. Students are not expected to
 rewrite their slides as a prose chapter. The topical chapters organize and
 link to presentations; they do not duplicate the instructor book.
 
+## Clone and Render the Notes Locally
+
+Keep a local copy of these notes so that you can render presentations before
+opening a pull request. Place the `ids-book` and `ids-f26` repositories in the
+same parent folder. If you plan to contribute, fork
+[`statds/ids-f26`](https://github.com/statds/ids-f26) on GitHub first, then
+clone your fork. Replace `GitHub_Username` below with your GitHub username:
+
+```bash
+cd path-to-your-course-work
+git clone https://github.com/GitHub_Username/ids-f26.git
+cd ids-f26
+git remote add upstream https://github.com/statds/ids-f26.git
+git remote -v
+git status
+```
+
+If you only want a local copy for reading and rendering, clone the shared
+repository directly instead:
+
+```bash
+git clone https://github.com/statds/ids-f26.git
+cd ids-f26
+```
+
+Use the course Python environment that you already created while working
+through the instructor book. Do **not** create another virtual environment or
+install packages inside `ids-f26`. From the `ids-f26` repository, activate the
+environment in the sibling `ids-book` checkout:
+
+```bash
+# macOS or Linux
+source ../ids-book/.ids/bin/activate
+
+# Windows with Git Bash
+source ../ids-book/.ids/Scripts/activate
+```
+
+If your repositories are not siblings, replace `../ids-book` with the path to
+your `ids-book` checkout. Confirm that the selected interpreter is the course
+environment before rendering:
+
+```bash
+python --version
+which python
+make check-tools
+```
+
+Render the notes and all accepted presentations with:
+
+```bash
+make render
+```
+
+Quarto writes the local site to `_book/index.html`. Open that file in a browser
+and inspect the page or slides before requesting review. While developing one
+presentation, render only that source file:
+
+```bash
+make render-one FILE=presentations/last-name-topic/index.qmd
+```
+
+The `_book/` directory is generated output and must stay out of commits. If a
+render fails because a package is missing, first verify the active interpreter
+and ask the instructor before adding a dependency to the shared course
+environment.
+
 ## Presentation Expectations
 
 A presentation should ordinarily contain:
