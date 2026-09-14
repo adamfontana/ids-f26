@@ -60,22 +60,23 @@ git clone https://github.com/statds/ids-f26.git
 cd ids-f26
 ```
 
-Use the course Python environment that you already created while working
-through the instructor book. Do **not** create another virtual environment or
-install packages inside `ids-f26`. From the `ids-f26` repository, activate the
-environment in the sibling `ids-book` checkout:
+Use the course Python environment that you already chose while working through
+the instructor book. Do **not** create another virtual environment or install
+packages inside `ids-f26`. From the `ids-f26` repository, set
+`ENVIRONMENT_DIRECTORY` to that environment’s path and activate it:
 
 ```bash
+ENVIRONMENT_DIRECTORY=/path/to/your/environment
+
 # macOS or Linux
-source ../ids-book/.ids/bin/activate
+source "$ENVIRONMENT_DIRECTORY/bin/activate"
 
 # Windows with Git Bash
-source ../ids-book/.ids/Scripts/activate
+source "$ENVIRONMENT_DIRECTORY/Scripts/activate"
 ```
 
-If your repositories are not siblings, replace `../ids-book` with the path to
-your `ids-book` checkout. Confirm that the selected interpreter is the course
-environment before rendering:
+Confirm that the selected interpreter is the course environment before
+rendering:
 
 ```bash
 python --version
