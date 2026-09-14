@@ -43,7 +43,7 @@ render-one: check-tools ## Render one presentation specified by FILE.
 	$(QUARTO) render "$(FILE)" $(QUARTO_ARGS)
 
 publish: render ## Render and publish the complete site to GitHub Pages.
-	$(QUARTO) publish gh-pages --no-render $(QUARTO_ARGS)
+	$(QUARTO) publish gh-pages --no-render --no-prompt $(QUARTO_ARGS)
 
 clean-output: ## Remove the rendered book.
 	rm -rf -- _book
