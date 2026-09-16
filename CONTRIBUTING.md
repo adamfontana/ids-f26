@@ -47,6 +47,13 @@ git pull --ff-only
 git switch -c topic/your-name-short-topic
 ```
 
+The first command switches to the local `main` branch. The second updates it
+from its remote after checking that the update can be applied without a merge
+commit. The third command creates a new branch from the updated `main` and
+switches to it; the `-c` option means “create.” Confirm the result with
+`git branch --show-current`. You should see
+`topic/your-name-short-topic` before editing any files.
+
 For a revision to an existing deck, a name such as
 `topic/your-name-plot-caption` is appropriate. One branch and pull request
 should contain one focused contribution.
