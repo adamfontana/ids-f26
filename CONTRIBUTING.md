@@ -226,6 +226,8 @@ finished topic branch. The easiest option is to use the **Sync fork** button
 on the fork's GitHub page. From a terminal, the equivalent workflow is:
 
 ```text
+git remote -v
+# Run the next command only if `upstream` is missing.
 git remote add upstream https://github.com/statds/ids-f26.git
 git fetch upstream
 git switch main
@@ -236,8 +238,9 @@ git push origin --delete topic/your-name-plot-label
 ```
 
 Here, `upstream` is the course repository and `origin` is the student's fork.
-If those remotes have not been configured, inspect them with
-`git remote -v` before running the commands. A student should not delete the
+Run the `git remote add upstream` command only if `upstream` is not already
+listed by `git remote -v`; `origin` should point to the student's fork. A
+student should not delete the
 branch until the pull request is merged or closed and the work is safely
 available elsewhere. If a local branch cannot be deleted because Git reports
 that it is not fully merged, stop and verify the pull request status rather
