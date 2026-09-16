@@ -226,6 +226,7 @@ finished topic branch. The easiest option is to use the **Sync fork** button
 on the fork's GitHub page. From a terminal, the equivalent workflow is:
 
 ```text
+git remote add upstream https://github.com/statds/ids-f26.git
 git fetch upstream
 git switch main
 git merge --ff-only upstream/main

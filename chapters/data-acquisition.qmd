@@ -3,4 +3,9 @@
 Student presentations in this chapter concern obtaining, exchanging, storing,
 and programmatically accessing data.
 
-Presentations will be added during the semester.
+**Topic example:**
+[Working with an API](../topic/api/)
+
+This example shows how to separate a documented data request from the analysis
+and how to avoid exposing credentials or depending unnecessarily on a live
+service.

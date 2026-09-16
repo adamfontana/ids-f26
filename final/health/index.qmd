@@ -1,0 +1,55 @@
+---
+title: "Health Survey"
+subtitle: "Example final-project presentation"
+author: "Instructor-created example"
+format:
+  revealjs:
+    slide-number: true
+    preview-links: auto
+jupyter: python3
+---
+
+# Question
+
+Do people who report more hours of sleep also report higher daily energy?
+
+## Data and scope
+
+This demonstration uses invented observations for five people. A real project
+would document the population, sampling process, variables, and source.
+
+```{python}
+import pandas as pd
+
+survey = pd.DataFrame({
+    "sleep": [5, 6, 7, 8, 9],
+    "energy": [3, 4, 5, 6, 6],
+})
+survey
+```
+
+## Evidence
+
+```{python}
+survey.corr(numeric_only=True)
+```
+
+These invented observations show a positive association. The result is
+descriptive, not evidence that additional sleep causes a particular energy
+score.
+
+## Limitations
+
+- The example is tiny and does not represent a population.
+- Both variables are self-reported.
+- Other factors, such as health or workload, may affect energy.
+
+## Conclusion
+
+The example supports a question for further study, not a causal claim. A
+larger project should predefine the variables, document sampling, visualize
+the data, and report uncertainty.
+
+# Sources
+
+This example uses invented values and requires no external dataset.
