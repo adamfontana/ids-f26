@@ -318,6 +318,10 @@ of presenters will be added when the course calendar is finalized.
 
 ## Contributing to the Collaborative Notes
 
+See the repository's
+[contribution guide](https://github.com/statds/ids-f26/blob/main/CONTRIBUTING.md)
+for the detailed presentation, Git, and pull-request workflow.
+
 Use the following workflow:
 
 1. Synchronize your local repository with the shared repository.
