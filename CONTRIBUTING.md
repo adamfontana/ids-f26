@@ -200,6 +200,49 @@ request description, state what changed, why it helps the audience, and that
 can then comment on the source and the rendered slides, and the contributor
 can push revisions to the same branch.
 
+### What the commands do
+
+The commands in this workflow each have a separate purpose:
+
+- `git status --short` reports changed, staged, and untracked files in a
+  compact form.
+- `git branch --show-current` prints the branch that is currently checked out.
+- `git switch main` changes the current branch to `main` without creating a
+  branch.
+- `git pull --ff-only` downloads updates and moves the current branch forward
+  only when Git can do so without creating a merge commit.
+- `git switch -c branch-name` creates a new branch at the current commit and
+  switches to it. The `-c` means “create.”
+- `make render-one FILE=path/to/index.qmd` runs the repository's Makefile
+  target to render one presentation. It does not create a Git commit.
+- `git diff -- path/to/file` shows unstaged edits to a specified file.
+- `git add path/to/file` stages the named file for the next commit; it does
+  not publish the file or commit it.
+- `git diff --staged` shows exactly what is currently staged for the next
+  commit.
+- `git commit -m "message"` records the staged snapshot in local Git history.
+  The message should briefly describe one logical change.
+- `git push -u origin branch-name` uploads the branch and its commits to the
+  student's fork. The `-u` records the remote tracking branch for later pushes.
+- `git log --oneline --decorate` summarizes the branch history, while
+  `git show COMMIT` displays the files and changes recorded by one commit.
+- `git remote -v` lists the URLs represented by names such as `origin` and
+  `upstream`.
+- `git fetch upstream` downloads the course repository's latest history
+  without changing the student's working files.
+- `git merge --ff-only upstream/main` updates the local `main` branch from the
+  course repository only when the update can be applied without a merge
+  commit.
+- `git branch -d branch-name` removes a finished local branch after its work
+  has been merged or is safely available elsewhere.
+- `git push origin --delete branch-name` removes the finished branch from the
+  student's fork. It does not delete the merged contribution or pull request.
+
+The distinction between working files, staged changes, local commits, and
+remote commits is important: editing changes the working tree, `git add`
+selects changes for a snapshot, `git commit` records that snapshot locally, and
+`git push` sends the commits to GitHub.
+
 ### After the pull request is reviewed
 
 The instructor or another designated maintainer accepts a contribution from
