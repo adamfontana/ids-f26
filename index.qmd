@@ -198,12 +198,60 @@ project ideas include:
 [Add current milestones, deliverables, presentation requirements, and links to
 time-sensitive challenges.]
 
+### Final Presentation Peer Evaluation
+
+Each student evaluates every other presenter using the same three criteria.
+Rate each criterion on a 5--1 scale, where 5 means excellent and 1 means
+poor. Do not evaluate your own presentation. Base each rating on evidence from
+the presentation and add a brief comment explaining the rating.
+
+Use the following general scale:
+
+- **5 -- Excellent:** exceptional, complete, and convincing;
+- **4 -- Strong:** clear and effective, with only minor weaknesses;
+- **3 -- Adequate:** generally satisfactory, but with noticeable gaps;
+- **2 -- Limited:** partially successful, but with substantial weaknesses; and
+- **1 -- Poor:** missing, seriously flawed, or not understandable.
+
+- **Domain:** Does the presentation motivate the work adequately? Does it
+  explain what the project is for and why it matters? Does it place the project
+  in context by reviewing relevant existing work appropriately?
+- **Methods:** Are the variables meaningfully constructed? Are the methods
+  appropriate for the problem, and are they adapted effectively to the
+  application? Are the computational methods used appropriately? Does the
+  presentation acknowledge important limitations?
+- **Presentation:** Is the presentation clear, professional, and informative
+  for a general audience? Are the findings interpreted effectively in
+  nontechnical language? Do the tables and figures communicate the intended
+  information clearly?
+
 ## Topic Presentations
 
-The private course syllabus contains the assessment policies for topic
-presentations. This public chapter documents the presentation order, topic
-options, schedule, and contribution workflow without reproducing grading
-details.
+The private course syllabus contains the official assessment policies for topic
+presentations. This public chapter also provides the working rubric so that
+contributors understand what makes a strong presentation, pull request, and
+revision.
+
+### Topic Presentation Rubric
+
+Topic presentations are worth 20 points. A topic presentation is a focused
+teaching contribution, not a final research project; original data, advanced
+methods, and novel findings are not required.
+
+- **Approval and preview: 4 points.** The topic is focused and appropriate,
+  the proposed approach is approved, the preview is submitted on time, and
+  the deck is sufficiently complete to review. Sources should be identified,
+  and examples should run when computation is part of the presentation.
+- **Oral presentation: 10 points.** The presentation motivates the topic and
+  explains its main idea accurately (3 points), develops a useful example and
+  interprets its output correctly (3 points), discusses limitations, common
+  mistakes, and specific takeaways (2 points), and uses readable slides with
+  clear, organized, and engaging delivery (2 points).
+- **Pull request and revision: 6 points.** The source is organized,
+  reproducible, and properly attributed (2 points); the contributor responds
+  to review with a meaningful revision and maintains a focused pull request
+  (2 points); and the final source and topical catalog entry are complete and
+  correctly linked (2 points).
 
 ### Presentation Order
 
