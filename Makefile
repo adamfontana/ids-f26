@@ -28,8 +28,9 @@ render: book presentations ## Render the notes and all presentations.
 book: check-tools ## Render the book pages.
 	$(QUARTO) render $(QUARTO_ARGS)
 
-presentations: check-tools ## Render all RevealJS presentations.
-	$(QUARTO) render presentations $(QUARTO_ARGS)
+presentations: check-tools ## Render all topic and final presentations.
+	$(QUARTO) render topic $(QUARTO_ARGS)
+	$(QUARTO) render final $(QUARTO_ARGS)
 
 preview: check-tools ## Preview the book with live reload.
 	$(QUARTO) preview $(QUARTO_ARGS)
@@ -49,6 +50,6 @@ clean-output: ## Remove the rendered book.
 	rm -rf -- _book
 
 clean-cache: ## Remove Quarto caches and frozen computations.
-	rm -rf -- .quarto _freeze presentations/.quarto presentations/_freeze
+	rm -rf -- .quarto _freeze topic/.quarto topic/_freeze final/.quarto final/_freeze
 
 clean: clean-output clean-cache ## Remove all generated Quarto files.

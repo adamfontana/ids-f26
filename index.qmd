@@ -26,14 +26,18 @@ data-science concepts and working through a Git and GitHub review process.
 
 The notes are maintained in the
 [`ids-f26` repository](https://github.com/statds/ids-f26). Students contribute
-through topic branches and pull requests. Each topic contribution consists of:
+through topic branches and pull requests. The repository contains two kinds of
+presentation. A topic presentation explains a method or idea and belongs under
+`topic/`; a final-project presentation reports an original project and belongs
+under `final/`.
 
-1. a RevealJS slide deck in its own directory under `presentations/`; and
-2. a short catalog entry in the relevant topical chapter.
+Each topic presentation needs a short catalog entry in its relevant topical
+chapter. Final-project presentations are collected in the Final Project
+Presentations chapter. In both cases, the slide deck is the substantive
+contribution; contributors do not need to rewrite slides as prose.
 
-The slide deck is the substantive contribution. Students are not expected to
-rewrite their slides as a prose chapter. The topical chapters organize and
-link to presentations; they do not duplicate the instructor book.
+The topical chapters and final-project chapter organize and link to
+presentations; they do not duplicate the instructor book.
 
 ## Clone and Render the Notes Locally
 
@@ -95,7 +99,7 @@ and inspect the page or slides before requesting review. While developing one
 presentation, render only that source file:
 
 ```bash
-make render-one FILE=presentations/last-name-topic/index.qmd
+make render-one FILE=topic/last-name-topic/index.qmd
 ```
 
 The `_book/` directory is generated output and must stay out of commits. If a
@@ -121,7 +125,7 @@ from executable code when practical. Link to relevant material in `ids-book`
 instead of repeating substantial instructor-authored exposition.
 
 The
-[example Quarto presentation](presentations/example-quarto-presentations/)
+[example Quarto presentation](topic/example-quarto-presentations/)
 demonstrates the expected directory layout and basic slide conventions.
 
 ## Wishlist
@@ -304,8 +308,9 @@ student's contribution is accepted.
 ### Final Project Presentation Schedule
 
 The final-project presentation schedule ordinarily follows the same student
-order. Dates, locations, and any grouping of presenters will be added when the
-course calendar is finalized.
+order. The [Final Project Presentations](chapters/final-project-presentations.qmd)
+chapter collects links to the rendered decks. Dates, locations, and any grouping
+of presenters will be added when the course calendar is finalized.
 
 | Date | Location | Presenter |
 |---|---|---|
@@ -317,8 +322,10 @@ Use the following workflow:
 
 1. Synchronize your local repository with the shared repository.
 2. Create and switch to a topic branch.
-3. Copy and adapt the example presentation directory.
-4. Add a short entry to the appropriate topical chapter.
+3. Copy and adapt the example directory into `topic/` or `final/`, according to
+   the kind of presentation.
+4. Add a short entry to the appropriate topical chapter, or add the final
+   project to the Final Project Presentations chapter.
 5. Activate the course Python environment when computation is required.
 6. Render and review the presentation locally.
 7. Make small commits with informative messages.

@@ -4,8 +4,6 @@
 **/_freeze/
 **/*.quarto_ipynb
 *.html
-/presentations/.gitignore
-
 # LaTeX syllabus build products
 *.aux
 *.fdb_latexmk

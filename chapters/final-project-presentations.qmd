@@ -1,0 +1,29 @@
+# Final Project Presentations
+
+Final-project presentations report an original data-science project. They are
+different from topic presentations: a topic presentation teaches a method or
+idea, while a final-project presentation explains a question, data, analysis,
+evidence, limitations, and conclusions.
+
+Each accepted presentation has its source in
+`final/<project-name>/index.qmd`. The rendered deck is linked below after the
+project is accepted.
+
+## Example presentations
+
+These instructor-created examples demonstrate the expected project narrative.
+
+| Project | Presenter(s) | Presentation |
+|:--|:--|:--|
+| Health survey | Instructor-created example | [View the slides](../final/health/) |
+| Rental prices | Instructor-created example | [View the slides](../final/rent/) |
+
+## Accepted Presentations
+
+No final-project presentations have been accepted yet.
+
+Add entries in this form:
+
+| Project | Presenter(s) | Presentation |
+|:--|:--|:--|
+| Project title | Name(s) | [View the slides](../final/project-name/) |
