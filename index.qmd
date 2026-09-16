@@ -364,43 +364,32 @@ source and rendered PDF are easy to navigate. Use the
 [homework template](https://github.com/statds/hw-template) as the starting
 point for the required structure.
 
-For each assignment, follow the complete workflow below:
+Follow the detailed Git workflow in
+[Project Management, especially Exercise 2.7](https://statds.github.io/ids-book/02-git.html#exr-git-wishlist).
+That workflow explains how to inspect a repository, create a branch, stage
+named files, review diffs, write meaningful commits, inspect history, and
+preserve evidence of the work.
 
-1. Accept the assignment using the link provided through the course site.
-2. Clone the resulting repository to your computer and inspect the remotes
-   with `git remote -v`.
-3. Use `git status`, `git branch --show-current`, and `git log --oneline` to
-   inspect the new clone before editing it. Record the relevant results in the
-   assignment source.
-4. Create a descriptive branch for the assignment. Keep the default branch
-   available as a clean starting point for later work.
-5. Develop the single Quarto source file locally and solve every assigned
-   problem. Label each problem clearly and make changes in small, coherent
-   stages.
-6. Make at least **ten small, meaningful commits for every assignment**. A
-   commit should capture a real step, such as adding a problem structure,
-   completing part of a solution, correcting an error, improving an
-   explanation, or revising a figure. Do not create empty commits or split
-   meaningless one-line changes merely to reach ten. Each commit needs an
-   informative imperative message.
-7. Before each commit, inspect `git status` and `git diff`, stage only the
-   intended named file or files, inspect `git diff --staged`, and then commit.
-   Do not use a final one-time commit to hide the development history.
-8. Use `git log --oneline --decorate` and `git show` to verify the branch name,
-   the ten or more commits, and the changes they contain. Record the commit
-   hashes and messages, along with concise command results, in the assignment
-   source or in the location specified by the assignment.
-9. Push the branch and all of its commits to the assignment repository. A
-   final snapshot without the complete development history is not a complete
-   submission.
-10. Render the assignment and inspect the result. Submit the PDF for ease of
-    grading, following the assignment instructions for where to attach it.
+Fall 2026 assignment requirements are:
+
+1. Accept the assignment through the course site and clone the resulting
+   Classroom 50 repository.
+2. Develop the single `.qmd` source file on a descriptive branch, solving all
+   assigned problems and labeling them clearly.
+3. Make at least **ten small, meaningful commits for every assignment**. Do
+   not create empty commits or split meaningless changes merely to reach ten.
+   Each commit should record a real development step and use an informative,
+   imperative message.
+4. Preserve the complete branch history. Record the branch name, commit
+   hashes and messages, and concise command results in the assignment source
+   or wherever the assignment specifies.
+5. Push the branch and render the assignment before submitting the PDF through
+   the designated course workflow.
 
 The ten-commit requirement applies to each assignment repository, not to the
-semester notes repository as a whole. The class-notes contribution workflow
-uses pull requests for review; graded assignments remain private in Classroom
-50 and should not be submitted as public pull requests unless an assignment
-specifically says otherwise.
+semester notes repository as a whole. Graded assignments remain private in
+Classroom 50 and are not submitted as public pull requests unless an
+assignment specifically says otherwise.
 
 Keep generated files out of the repository unless the assignment explicitly
 requests them. Use Git from the command line rather than GitHub's file-upload
