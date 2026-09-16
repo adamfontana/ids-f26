@@ -6,23 +6,30 @@ Science course.
 These notes supplement the instructor-authored `ids-book`. Students contribute
 RevealJS slide presentations containing examples, explanations,
 visualizations, troubleshooting advice, applications, and other insights from
-the semester. Topical chapters organize and link to the presentations rather
-than reproducing them as prose.
+the semester. Topical chapters organize and link to topic presentations, while
+the final-project chapter collects links to final-project presentations.
 
 Private graded assignments and assessment materials belong in the designated
 Classroom 50 repositories, not in this repository.
 
 ## Contributing
 
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the complete workflow and the
+recommended structure for topic and final-project presentations.
+
 Use a topic branch for each focused contribution. Make small, coherent
 commits, push the branch, and open a pull request. Revise the contribution in
 response to review before it is merged.
 
-A contribution consists of:
+A new presentation contribution consists of:
 
-1. a RevealJS source document in a dedicated directory under
-   `presentations/`; and
+1. a RevealJS source document in a dedicated, short-named directory under
+   `topic/` or `final/`; and
 2. a short catalog entry in the relevant file under `chapters/`.
+
+Students improving an existing presentation should change the presentation
+source and add or revise a catalog entry only when the title, description, or
+placement changes.
 
 The presentation should motivate the topic, explain its main idea, provide a
 reproducible example, interpret the result, discuss limitations or common
@@ -42,8 +49,12 @@ create, select, or modify virtual environments.
 Render one presentation while developing it:
 
 ```text
-make render-one FILE=presentations/last-name-topic/index.qmd
+make render-one FILE=topic/last-name-topic/index.qmd
 ```
+
+The repository includes two topic examples (`topic/plot/` and `topic/api/`)
+and two final-project examples (`final/health/` and `final/rent/`). They use
+invented data and are labeled as instructor-created examples.
 
 Render the book and all accepted presentations:
 
