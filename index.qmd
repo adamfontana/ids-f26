@@ -156,6 +156,11 @@ last name and use a nested Markdown list, as in the instructor's example:
   - Strengthen my Data Science skills through practice and projects.
   - Learn how to communicate data-driven/derived results clearly.
 - Fontana, Adam
+    - Become proficient in Git and GitHub workflows.
+    - Learn which models to use and when, including which models are 
+    best suited for different datasets and uses.
+    - Develop stronger skills in interpreting and evaluating 
+    black box models, such as XGBoost models.
 - Hartman, Mikaela
   - Become more comfortable using critical software like GitHub, Git, and WSL.
   - Expand my knowledge of Python and improve my general coding skills.
