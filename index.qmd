@@ -154,6 +154,9 @@ last name and use a nested Markdown list, as in the instructor's example:
 - Hilmi, Sofiane
 - Horan, Elizabeth
 - Kelly, Daniel
+    - Become more comfortable using Python and Terminal.
+    - Learn to use Git and GitHub confidently.
+    - Become better at working with real-world data.
 - Kiani, Ismail 
   - I want to become more familiar with GitHub and its branch-based workflow.
   - I want to improve my Git command-line skills for managing version-controlled projects.
