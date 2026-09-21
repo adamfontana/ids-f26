@@ -209,6 +209,8 @@ last name and use a nested Markdown list, as in the instructor's example:
   - Strengthen my ability to use Python for data science application, getting ready for studying deep learning and reinforcement learning. 
   - Learn how to communicate reproducible results efficiently and clearly with Quarto.
 - Wang, Leo
+  - Learn to create clear and informative data visualizations.
+  - Learn to fit statistical models and interpret their results.
 
 Add the goals through a focused pull request. Do not edit anyone else's entry
 or include private information.
