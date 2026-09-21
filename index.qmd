@@ -299,10 +299,9 @@ methods, and novel findings are not required.
 
 ### Presentation Order
 
-The topic presentation order will be finalized in class. Each student will
-contribute one digit to the random seed. The current seed produces a
-provisional order; after the contributed digits replace it, the same seed will
-reproduce the final order on every render.
+The topic presentation order was set in class. Each student contributed one
+digit to the random seed, and the same seed reproduces the order on every
+render.
 
 ```{python}
 #| eval: true
@@ -324,11 +323,11 @@ random.seed(1623 + 4958 + 3751 + 55)
 random.sample(presenters, len(presenters))
 ```
 
-The displayed order is provisional until the class sets the seed. The final
-order will establish priority for topic selection and the default sequence for
-topic presentations. Some topics have prerequisites, so the instructor may
-adjust the schedule. Students may exchange slots by mutual agreement. Record
-an approved change through a pull request and notify the instructor.
+The displayed order establishes priority for topic selection and the default
+sequence for topic presentations. Some topics have prerequisites, so the
+instructor may adjust the schedule. Students may exchange slots by mutual
+agreement. Record an approved change through a pull request and notify the
+instructor.
 
 ### Selecting a Topic and Task Board
 
@@ -395,24 +394,72 @@ provides possible topics; other topics may be added or refined with approval.
 
 ### Schedule
 
-The dated schedule will be completed after topics and presentation dates are
-confirmed. The topic title should link to the rendered slides after the
-student's contribution is accepted.
+The topic presentation schedule follows the seeded order. Topic presentations
+begin with one presentation per meeting, increase to two, and end with three
+before the final-project presentation period. October 19 and 21 are reserved
+for midterm-project work, and the Thanksgiving recess has no classes. Link the
+topic title to the rendered slides after the student's contribution is
+accepted.
 
 | Date | Presenter | Topic |
 |---|---|---|
-| [date] | [name] | [topic] |
+| 09/28 | Liu, Ethan | [topic] |
+| 09/30 | Noe, Amanda | [topic] |
+| 10/05 | Anikeev, Katerina | [topic] |
+| 10/07 | Chervonny, Erik | [topic] |
+| 10/12 | Mansur, Mahiba | [topic] |
+| 10/14 | Ong, Enrico | [topic] |
+| 10/19 | — | Midterm-project work; no topic presentations |
+| 10/21 | — | Midterm-project work; no topic presentations |
+| 10/26 | Chok, Isaac | [topic] |
+| 10/28 | Wang, Chaoyang | [topic] |
+| 11/02 | Bucco, Sadie | [topic] |
+| 11/04 | Tria, Nicholas | [topic] |
+| 11/04 | Parkins, Jack | [topic] |
+| 11/09 | Fontana, Adam | [topic] |
+| 11/09 | Horan, Elizabeth | [topic] |
+| 11/11 | Distefano, Cristian | [topic] |
+| 11/11 | Nair, Pardhip | [topic] |
+| 11/11 | Morissette, Carter | [topic] |
+| 11/16 | Maras, Ruveyda | [topic] |
+| 11/16 | Wang, Leo | [topic] |
+| 11/16 | Choudhury, Ruhama | [topic] |
+| 11/18 | Hartman, Mikaela | [topic] |
+| 11/18 | Kiani, Ismail | [topic] |
+| 11/18 | Kelly, Daniel | [topic] |
 
 ### Final Project Presentation Schedule
 
-The final-project presentation schedule ordinarily follows the same student
-order. The [Final Project Presentations](chapters/final-project-presentations.qmd)
-chapter collects links to the rendered decks. Dates, locations, and any grouping
-of presenters will be added when the course calendar is finalized.
+The final-project presentation schedule follows the same seeded student order.
+The final two instructional weeks and the exam-period meeting are reserved for
+final presentations. Replace the exam-period placeholder with the confirmed
+date. The [Final Project Presentations](chapters/final-project-presentations.qmd)
+chapter collects links to the rendered decks.
 
-| Date | Location | Presenter |
+| Date | Presenter | Project |
 |---|---|---|
-| [date and time] | [location] | [name] |
+| 11/30 | Liu, Ethan | [project] |
+| 11/30 | Noe, Amanda | [project] |
+| 11/30 | Anikeev, Katerina | [project] |
+| 11/30 | Chervonny, Erik | [project] |
+| 12/02 | Mansur, Mahiba | [project] |
+| 12/02 | Ong, Enrico | [project] |
+| 12/02 | Chok, Isaac | [project] |
+| 12/02 | Wang, Chaoyang | [project] |
+| 12/07 | Bucco, Sadie | [project] |
+| 12/07 | Tria, Nicholas | [project] |
+| 12/07 | Parkins, Jack | [project] |
+| 12/07 | Fontana, Adam | [project] |
+| 12/09 | Horan, Elizabeth | [project] |
+| 12/09 | Distefano, Cristian | [project] |
+| 12/09 | Nair, Pardhip | [project] |
+| 12/09 | Morissette, Carter | [project] |
+| [exam-period date] | Maras, Ruveyda | [project] |
+| [exam-period date] | Wang, Leo | [project] |
+| [exam-period date] | Choudhury, Ruhama | [project] |
+| [exam-period date] | Hartman, Mikaela | [project] |
+| [exam-period date] | Kiani, Ismail | [project] |
+| [exam-period date] | Kelly, Daniel | [project] |
 
 ## Contributing to the Collaborative Notes
 
