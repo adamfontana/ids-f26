@@ -156,6 +156,9 @@ last name and use a nested Markdown list, as in the instructor's example:
 - Hartman, Mikaela
 - Hilmi, Sofiane
 - Horan, Elizabeth
+    - Improve at using GitHub.
+    - Do a project involving political polling data. 
+    - Improve my Python skills.
 - Kelly, Daniel
     - Become more comfortable using Python and Terminal.
     - Learn to use Git and GitHub confidently.
