@@ -114,7 +114,7 @@ You do not need to rewrite the deck as a prose section.
 From an active course Python environment, run:
 
 ```bash
-make render-one FILE=presentations/last-name-topic/index.qmd
+make render-one FILE=topic/last-name-topic/index.qmd
 ```
 
 Then verify the slides in a browser and inspect `git status`. Submit the source

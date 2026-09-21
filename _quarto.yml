@@ -17,6 +17,7 @@ book:
     - chapters/data-wrangling-visualization.qmd
     - chapters/statistical-modeling.qmd
     - chapters/advanced-methods-ai.qmd
+    - chapters/final-project-presentations.qmd
 
 format:
   html:

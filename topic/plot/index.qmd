@@ -1,0 +1,53 @@
+---
+title: "Reading a Plot"
+subtitle: "Example topic presentation"
+author: "Instructor-created example"
+format:
+  revealjs:
+    slide-number: true
+    preview-links: auto
+jupyter: python3
+---
+
+# Start with a question
+
+Suppose a dataset compares the number of hours people spend studying with
+their exam scores. A plot can reveal a pattern, but the pattern is not the
+same thing as a conclusion.
+
+## Make a small example
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+hours = [1, 2, 2, 3, 4, 5, 6, 7]
+scores = [58, 65, 63, 70, 74, 79, 81, 86]
+
+fig, ax = plt.subplots()
+ax.scatter(hours, scores)
+ax.set(xlabel="Study hours", ylabel="Exam score")
+plt.show()
+```
+
+## Describe what the plot shows
+
+The points show a positive association in this small example: larger study
+times tend to occur with larger exam scores. The points do not show that study
+time caused every score to increase.
+
+## Avoid overclaiming
+
+- Association does not by itself establish causation.
+- A small or selective sample may not represent a larger population.
+- Unmeasured variables could help explain the pattern.
+
+## Takeaways
+
+1. Start with a question and choose axes that answer it.
+2. Describe the pattern before offering an explanation.
+3. State limitations before making a causal claim.
+
+# Sources
+
+This example uses invented values and requires no external dataset.

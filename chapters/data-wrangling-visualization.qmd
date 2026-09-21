@@ -6,8 +6,14 @@ communicating data through tables and graphics.
 ## Creating Presentations with Quarto
 
 **Example presentation:**
-[View slides](../presentations/example-quarto-presentations/)
+[Creating presentations with Quarto](../topic/example-quarto-presentations/)
 
 This example introduces RevealJS presentations in Quarto, including slide
 structure, executable Python code, figures, and a pre-submission rendering
 check.
+
+**Topic example:**
+[Reading a plot](../topic/plot/)
+
+This example demonstrates a focused explanation, a reproducible figure, and
+careful interpretation of association and causation.

@@ -1,3 +1,8 @@
+---
+execute:
+  freeze: false
+---
+
 # Introduction {.unnumbered}
 
 <!--
@@ -26,14 +31,86 @@ data-science concepts and working through a Git and GitHub review process.
 
 The notes are maintained in the
 [`ids-f26` repository](https://github.com/statds/ids-f26). Students contribute
-through topic branches and pull requests. Each topic contribution consists of:
+through topic branches and pull requests. The repository contains two kinds of
+presentation. A topic presentation explains a method or idea and belongs under
+`topic/`; a final-project presentation reports an original project and belongs
+under `final/`.
 
-1. a RevealJS slide deck in its own directory under `presentations/`; and
-2. a short catalog entry in the relevant topical chapter.
+Each topic presentation needs a short catalog entry in its relevant topical
+chapter. Final-project presentations are collected in the Final Project
+Presentations chapter. In both cases, the slide deck is the substantive
+contribution; contributors do not need to rewrite slides as prose.
 
-The slide deck is the substantive contribution. Students are not expected to
-rewrite their slides as a prose chapter. The topical chapters organize and
-link to presentations; they do not duplicate the instructor book.
+The topical chapters and final-project chapter organize and link to
+presentations; they do not duplicate the instructor book.
+
+## Clone and Render the Notes Locally
+
+Keep a local copy of these notes so that you can render presentations before
+opening a pull request. Place the `ids-book` and `ids-f26` repositories in the
+same parent folder. If you plan to contribute, fork
+[`statds/ids-f26`](https://github.com/statds/ids-f26) on GitHub first, then
+clone your fork. Replace `GitHub_Username` below with your GitHub username:
+
+```bash
+cd path-to-your-course-work
+git clone https://github.com/GitHub_Username/ids-f26.git
+cd ids-f26
+git remote add upstream https://github.com/statds/ids-f26.git
+git remote -v
+git status
+```
+
+If you only want a local copy for reading and rendering, clone the shared
+repository directly instead:
+
+```bash
+git clone https://github.com/statds/ids-f26.git
+cd ids-f26
+```
+
+Use the course Python environment that you already chose while working through
+the instructor book. Do **not** create another virtual environment or install
+packages inside `ids-f26`. From the `ids-f26` repository, set
+`ENVIRONMENT_DIRECTORY` to that environment’s path and activate it:
+
+```bash
+ENVIRONMENT_DIRECTORY=/path/to/your/environment
+
+# macOS or Linux
+source "$ENVIRONMENT_DIRECTORY/bin/activate"
+
+# Windows with Git Bash
+source "$ENVIRONMENT_DIRECTORY/Scripts/activate"
+```
+
+Confirm that the selected interpreter is the course environment before
+rendering:
+
+```bash
+python --version
+which python
+make check-tools
+```
+
+Render the notes and all accepted presentations with:
+
+```bash
+make render
+```
+
+Quarto writes the local site to `_book/index.html`. Open that file in a browser
+and inspect the page or slides before requesting review. While developing one
+presentation, render only that source file:
+
+```bash
+make render-one FILE=topic/last-name-topic/index.qmd
+```
+
+The `_book/` directory is generated output and must stay out of commits. If a
+render fails because a package is missing, first verify the active interpreter
+and ask the instructor before adding a dependency to the shared course
+environment.
 
 ## Presentation Expectations
 
@@ -53,7 +130,7 @@ from executable code when practical. Link to relevant material in `ids-book`
 instead of repeating substantial instructor-authored exposition.
 
 The
-[example Quarto presentation](presentations/example-quarto-presentations/)
+[example Quarto presentation](topic/example-quarto-presentations/)
 demonstrates the expected directory layout and basic slide conventions.
 
 ## Wishlist
@@ -73,27 +150,70 @@ last name and use a nested Markdown list, as in the instructor's example:
   - Transfer skills to other courses.
   - Leverage what I learn to find a job.
 - Chok, Isaac
+  - Get familiar and comfortable with git and the command line.
+  - Build experience in data wrangling and visualization.
+  - Learn statistical modeling using Python.
 - Choudhury, Ruhama
 - Distefano, Cristian
+  - Become more confident using Git and GitHub for collaborative projects.
+  - Strengthen my Data Science skills through practice and projects.
+  - Learn how to communicate data-driven/derived results clearly.
 - Fontana, Adam
+    - Become proficient in Git and GitHub workflows.
+    - Learn which models to use and when, including which models are 
+    best suited for different datasets and uses.
+    - Develop stronger skills in interpreting and evaluating 
+    black box models, such as XGBoost models.
 - Hartman, Mikaela
+  - Become more comfortable using critical software like GitHub, Git, and WSL.
+  - Expand my knowledge of Python and improve my general coding skills.
+  - Gain real-world data-science skills that are applicable in a work setting.
 - Hilmi, Sofiane
 - Horan, Elizabeth
+    - Improve at using GitHub.
+    - Do a project involving political polling data. 
+    - Improve my Python skills.
 - Kelly, Daniel
-- Kiani, Ismail
+    - Become more comfortable using Python and Terminal.
+    - Learn to use Git and GitHub confidently.
+    - Become better at working with real-world data.
+- Kiani, Ismail 
+  - I want to become more familiar with GitHub and its branch-based workflow.
+  - I want to improve my Git command-line skills for managing version-controlled projects.
+  - I want to learn how to collaborate effectively on team projects using GitHub.  
 - Liu, Ethan
 - Mansur, Mahiba
+  - I want to get more comfortable using GitHub.
+  - I want to gain more hands on experience with different machine learning models.
+  - Create projects that help gain real life data science experience.
 - Maras, Ruveyda
 - Mettler, Ethan
 - Morissette, Carter
+  - Depend less on AI help while coding as the semester progresses, especially when troubleshooting errors.
+  - Build genuine comfort with git and the command line, not just copy-pasted commands from tutorials.
+
 - Nair, Pardhip
 - Noe, Amanda
 - Ong, Enrico
+  - Build fluency with the command line for everyday data-science tasks.
+  - Practice core Git operations: cloning, pushing, and pulling changes.
+  - Get comfortable creating and managing branches for real projects.
 - Parkins, Jack
+  - Learn to present a model to a non-technical audience.
+  - Get fluent with pandas and scikit-learn for exploratory work.
+  - Familiarize myself with github and gitbash.
 - Rosen, Seth
 - Tria, Nicholas
+  - Get more comfortable using Git and GitHub to improve my efficiency.
+  - Gain experience using Python code to visualize and interpret data.
+  - Learn more about the importance of data science as a discipline.
 - Wang, Chaoyang
+  - Develop practical skills with Git and GitHub workflows, including git add, git diff, git status, git commit, and git push.
+  - Strengthen my ability to use Python for data science application, getting ready for studying deep learning and reinforcement learning. 
+  - Learn how to communicate reproducible results efficiently and clearly with Quarto.
 - Wang, Leo
+  - Learn to create clear and informative data visualizations.
+  - Learn to fit statistical models and interpret their results.
 
 Add the goals through a focused pull request. Do not edit anyone else's entry
 or include private information.
@@ -122,12 +242,60 @@ project ideas include:
 [Add current milestones, deliverables, presentation requirements, and links to
 time-sensitive challenges.]
 
+### Final Presentation Peer Evaluation
+
+Each student evaluates every other presenter using the same three criteria.
+Rate each criterion on a 5--1 scale, where 5 means excellent and 1 means
+poor. Do not evaluate your own presentation. Base each rating on evidence from
+the presentation and add a brief comment explaining the rating.
+
+Use the following general scale:
+
+- **5 -- Excellent:** exceptional, complete, and convincing;
+- **4 -- Strong:** clear and effective, with only minor weaknesses;
+- **3 -- Adequate:** generally satisfactory, but with noticeable gaps;
+- **2 -- Limited:** partially successful, but with substantial weaknesses; and
+- **1 -- Poor:** missing, seriously flawed, or not understandable.
+
+- **Domain:** Does the presentation motivate the work adequately? Does it
+  explain what the project is for and why it matters? Does it place the project
+  in context by reviewing relevant existing work appropriately?
+- **Methods:** Are the variables meaningfully constructed? Are the methods
+  appropriate for the problem, and are they adapted effectively to the
+  application? Are the computational methods used appropriately? Does the
+  presentation acknowledge important limitations?
+- **Presentation:** Is the presentation clear, professional, and informative
+  for a general audience? Are the findings interpreted effectively in
+  nontechnical language? Do the tables and figures communicate the intended
+  information clearly?
+
 ## Topic Presentations
 
-The private course syllabus contains the assessment policies for topic
-presentations. This public chapter documents the presentation order, topic
-options, schedule, and contribution workflow without reproducing grading
-details.
+The private course syllabus contains the official assessment policies for topic
+presentations. This public chapter also provides the working rubric so that
+contributors understand what makes a strong presentation, pull request, and
+revision.
+
+### Topic Presentation Rubric
+
+Topic presentations are worth 20 points. A topic presentation is a focused
+teaching contribution, not a final research project; original data, advanced
+methods, and novel findings are not required.
+
+- **Approval and preview: 4 points.** The topic is focused and appropriate,
+  the proposed approach is approved, the preview is submitted on time, and
+  the deck is sufficiently complete to review. Sources should be identified,
+  and examples should run when computation is part of the presentation.
+- **Oral presentation: 10 points.** The presentation motivates the topic and
+  explains its main idea accurately (3 points), develops a useful example and
+  interprets its output correctly (3 points), discusses limitations, common
+  mistakes, and specific takeaways (2 points), and uses readable slides with
+  clear, organized, and engaging delivery (2 points).
+- **Pull request and revision: 6 points.** The source is organized,
+  reproducible, and properly attributed (2 points); the contributor responds
+  to review with a meaningful revision and maintains a focused pull request
+  (2 points); and the final source and topical catalog entry are complete and
+  correctly linked (2 points).
 
 ### Presentation Order
 
@@ -136,7 +304,7 @@ contribute one digit to the random seed. The current seed produces a
 provisional order; after the contributed digits replace it, the same seed will
 reproduce the final order on every render.
 
-```
+```{python}
 #| eval: true
 #| echo: true
 import csv
@@ -150,8 +318,9 @@ with open("roster.txt", newline="") as file:
 
 import random
 
-## seed jointly set by the class, with one digit from each student
-random.seed(0)  # replace 0 with the sum of the contributed digits
+## seed jointly set by the class on 09/16/26,
+## with one digit from each student in class
+random.seed(1623 + 4958 + 3751 + 55)
 random.sample(presenters, len(presenters))
 ```
 
@@ -237,8 +406,9 @@ student's contribution is accepted.
 ### Final Project Presentation Schedule
 
 The final-project presentation schedule ordinarily follows the same student
-order. Dates, locations, and any grouping of presenters will be added when the
-course calendar is finalized.
+order. The [Final Project Presentations](chapters/final-project-presentations.qmd)
+chapter collects links to the rendered decks. Dates, locations, and any grouping
+of presenters will be added when the course calendar is finalized.
 
 | Date | Location | Presenter |
 |---|---|---|
@@ -246,12 +416,18 @@ course calendar is finalized.
 
 ## Contributing to the Collaborative Notes
 
+See the repository's
+[contribution guide](https://github.com/statds/ids-f26/blob/main/CONTRIBUTING.md)
+for the detailed presentation, Git, and pull-request workflow.
+
 Use the following workflow:
 
 1. Synchronize your local repository with the shared repository.
 2. Create and switch to a topic branch.
-3. Copy and adapt the example presentation directory.
-4. Add a short entry to the appropriate topical chapter.
+3. Copy and adapt the example directory into `topic/` or `final/`, according to
+   the kind of presentation.
+4. Add a short entry to the appropriate topical chapter, or add the final
+   project to the Final Project Presentations chapter.
 5. Activate the course Python environment when computation is required.
 6. Render and review the presentation locally.
 7. Make small commits with informative messages.
@@ -290,17 +466,32 @@ source and rendered PDF are easy to navigate. Use the
 [homework template](https://github.com/statds/hw-template) as the starting
 point for the required structure.
 
-For each assignment:
+Follow the detailed Git workflow in
+[Project Management, especially Exercise 2.7](https://statds.github.io/ids-book/02-git.html#exr-git-wishlist).
+That workflow explains how to inspect a repository, create a branch, stage
+named files, review diffs, write meaningful commits, inspect history, and
+preserve evidence of the work.
 
-1. Accept the assignment using the link provided through the course site.
-2. Clone the resulting repository to your computer.
-3. Develop the single Quarto source file locally, solve every assigned
-   problem, and organize the work into meaningful commits.
-4. Push all source files and their complete commit history to your assignment
-   repository. A final snapshot without the development history is not a
-   complete submission.
-5. Render the assignment and submit the PDF for ease of grading, following the
-   assignment instructions for where to attach it.
+Fall 2026 assignment requirements are:
+
+1. Accept the assignment through the course site and clone the resulting
+   Classroom 50 repository.
+2. Develop the single `.qmd` source file on a descriptive branch, solving all
+   assigned problems and labeling them clearly.
+3. Make at least **ten small, meaningful commits for every assignment**. Do
+   not create empty commits or split meaningless changes merely to reach ten.
+   Each commit should record a real development step and use an informative,
+   imperative message.
+4. Preserve the complete branch history. Record the branch name, commit
+   hashes and messages, and concise command results in the assignment source
+   or wherever the assignment specifies.
+5. Push the branch and render the assignment before submitting the PDF through
+   the designated course workflow.
+
+The ten-commit requirement applies to each assignment repository, not to the
+semester notes repository as a whole. Graded assignments remain private in
+Classroom 50 and are not submitted as public pull requests unless an
+assignment specifically says otherwise.
 
 Keep generated files out of the repository unless the assignment explicitly
 requests them. Use Git from the command line rather than GitHub's file-upload
@@ -344,9 +535,9 @@ memorization; consult the relevant source when uncertain.
     meaningful commits preferable to one large final commit?
 14. What is the difference between collaboration and copying when completing
     homework or a project?
-15. Using the UConn Library guides on
-    [avoiding plagiarism](https://guides.lib.uconn.edu/plagiarism) and
-    [citing sources](https://guides.lib.uconn.edu/citing), what material must
+15. Using the UConn Library resources on
+    [avoiding plagiarism](https://lib.uconn.edu/services/ask/get-help/writing/plagiarism-resources/)
+    and [citing sources](https://guides.lib.uconn.edu/quickstart), what material must
     be quoted, paraphrased, cited, or otherwise attributed?
 16. Under UConn's
     [academic-integrity policy](https://policy.uconn.edu/2023/07/11/academic-scholarly-and-professional-integrity-and-misconduct-aspim-policy-on/),

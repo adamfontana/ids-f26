@@ -1,0 +1,58 @@
+---
+title: "Rental Prices"
+subtitle: "Example final-project presentation"
+author: "Instructor-created example"
+format:
+  revealjs:
+    slide-number: true
+    preview-links: auto
+jupyter: python3
+---
+
+# Question
+
+How is monthly rent related to apartment size in a small set of listings?
+
+## Data
+
+```{python}
+import pandas as pd
+
+listings = pd.DataFrame({
+    "size_sqft": [500, 650, 800, 950, 1100],
+    "rent": [1100, 1300, 1550, 1750, 2050],
+})
+listings
+```
+
+These values are invented for demonstration. A real project would identify
+the source, collection dates, location, and inclusion rules.
+
+## Explore the relationship
+
+```{python}
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+ax.scatter(listings["size_sqft"], listings["rent"])
+ax.set(xlabel="Apartment size (square feet)", ylabel="Monthly rent (dollars)")
+plt.show()
+```
+
+The listings show a positive association between size and rent. Location,
+condition, amenities, and timing could explain part of the relationship.
+
+## Limitations and next steps
+
+- The observations are not a random sample of all apartments.
+- Asking rent may differ from the final rental price.
+- A useful next analysis would compare neighborhoods and include amenities.
+
+## Conclusion
+
+Apartment size is a useful starting variable, but a credible project needs
+broader data and a design that addresses confounding variables.
+
+# Sources
+
+This example uses invented values and requires no external dataset.
