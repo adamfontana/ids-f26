@@ -485,8 +485,10 @@ Before requesting review, check that the contribution:
 
 - is original and properly attributes all sources;
 - follows the example presentation structure and has a matching chapter entry;
-- follows the repository's file-naming and source-writing conventions;
-- keeps lines reasonably short;
+- follows the repository's file-naming and source-writing conventions,
+  including a line width under 80 characters for prose and Markdown source;
+- uses small, meaningful commits throughout the work rather than one large
+  final commit, without creating empty or artificial commits;
 - uses BibTeX for scholarly references;
 - avoids unnecessary external files and large data files;
 - uses only images that may legally be redistributed;
