@@ -132,6 +132,8 @@ instead of repeating substantial instructor-authored exposition.
 The
 [example Quarto presentation](topic/example-quarto-presentations/)
 demonstrates the expected directory layout and basic slide conventions.
+The [presentation-skills example](topic/presentation-skills/) discusses
+storytelling, visual design, delivery, and evidence-based claims.
 
 ## Wishlist
 
