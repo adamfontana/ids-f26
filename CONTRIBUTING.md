@@ -76,8 +76,8 @@ topic/plot/
 └── figures/
 ```
 
-Keep the shared Quarto configuration in `topic/_quarto.yml`; do not create a
-new project configuration in each presentation directory.
+Use the repository's presentation profile when rendering; do not create a
+separate Quarto project configuration in each presentation directory.
 
 ### 3. Write the presentation source
 
