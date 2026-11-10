@@ -227,16 +227,17 @@ except ValueError as e:
   correct winner and a gap within 0.01 points of the pandas value
 - **Task selection:** write a pool of questions (tickers, windows) before
   testing, then draw tasks from it at random
-- **Model:** each of *n* tasks is an independent Bernoulli trial with a
-  common success probability *p*, so passes *k* ~ Binomial(*n*, *p*)
-- **Estimate:** p̂ = *k*/*n* with a 95% Wilson interval
+- **Model:** each of $n$ tasks is an independent Bernoulli trial with a
+  common success probability $p$, so the number of passes satisfies
+  $k \sim \mathrm{Binomial}(n, p)$.
+- **Estimate:** $\hat{p} = k/n$ with a 95% Wilson interval
   [@wilson1927probable; @nist2012confidence]
 
 ```{python}
 lo, hi = wilson(17, 20)
 ```
 
-Hypothetical example: 17 of 20 passes gives p̂ = 0.85 with
+Hypothetical example: 17 of 20 passes gives $\hat{p} = 0.85$ with
 interval `{python} f"{lo:.3f}"` to `{python} f"{hi:.3f}"`.
 
 ## Try It: Interval Width
@@ -246,9 +247,9 @@ interval `{python} f"{lo:.3f}"` to `{python} f"{hi:.3f}"`.
 raw(ci_widget())
 ```
 
-p̂^*m*^ is a plug-in estimate: it treats the observed rate as the
-true *p* and assumes independent runs. The 70% line is illustrative,
-not an evaluated baseline.
+The plug-in estimate $\hat{p}^{m}$ is the estimated probability that
+all $m$ independent runs pass. It treats the observed rate as the true
+$p$. The 70% line is illustrative, not an evaluated baseline.
 
 ## Takeaways
 
