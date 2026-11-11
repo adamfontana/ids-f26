@@ -104,7 +104,8 @@ kmeans = KMeans(n_clusters=3, random_state=2026)
 - Clustering groups observations based on similarities in their features.
 - K-means is an unsupervised learning algorithm that identifies these groups.
 - Does this by putting K points randomly on a board
-- minimizes the total euclidean distance (ie. straight line distance formula)
+- minimizes the sum of squared euclidean distances (pythagorean theorem dist. 
+b/w 2 pts) b/w a centroid and each of it's pts
 - before we get specifically into a workflow, a few things to go over
 :::
 
@@ -143,7 +144,7 @@ Supervised: Can we predict this guy's points per game based on the pick he was d
 ::: notes
 Key distinction: K means finds patterns, K nearest neighbors uses points around an observation to predict the obs
 K-Means uses a K amount of points and minimizes to find groups
-K-means uses the K closest observations to classify the obs in question
+KNN uses the K closest observations to classify the obs in question
 :::
 
 ## Step 1: Get Your Data {.smaller}
@@ -281,7 +282,7 @@ display(HTML(anim.to_jshtml()))
 
 :::{notes}
 each round, points are assigned to the center closest to it.
-then the centers moves to minimize the total dist between it and those points
+then the centers moves to minimize the sum of squared dist between it and those points
 then repeat
 but how do you choose k?
 :::
@@ -289,15 +290,19 @@ but how do you choose k?
 
 ## Elbow Method for Choosing K
 ::::{.columns}
-:::{.column width="50%"}
+:::{.column width="60%"}
 - Fit K-means for different values of K and measure **inertia** (within-cluster sum of squares).
 $$
-\text{WCSS} = \sum_{k=1}^{K} \sum_{x_i \in C_k} (x_i - \mu_k)^2
+\operatorname{WCSS}
+= \sum_{k=1}^{K} \sum_{i\in C_k}
+\lVert\mathbf{x}_i-\boldsymbol{\mu}_k\rVert_2^2,
 $$
-
+where $K$ = # clusters, $C_k$ is the index set of observations
+assigned to cluster $k$, $\mathbf{x}_i$ is observation $i$'s feature vector,
+and $\boldsymbol{\mu}_k$ is its cluster centroid.
 - Choose where the "elbow" is as K
 :::
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{python}
 #|echo: false
 inertias = []
@@ -325,7 +330,7 @@ plt.show()
 ::::
 ::: notes
 One way is to use the elbow method.
-WCSS basically means the total distance between obs in a cluster
+WCSS basically means the sum of squared distance between obs in a cluster
 Basically test k means for a lot of k, plot WCSS for each, and choose the one at the "elbow"
 :::
 
