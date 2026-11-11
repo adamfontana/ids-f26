@@ -23,7 +23,6 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import make_blobs
 from matplotlib.animation import FuncAnimation
 from IPython.display import HTML
-from IPython.display import Image, display
 
 NAVY, RED, TEAL, GRAY = "#1F3A5F", "#BF280D", "#44CDE3", "#C9CED6"
 plt.rcParams.update({
@@ -61,6 +60,8 @@ plt.rcParams.update({
 #| echo: false
 #| fig-width: 7
 #| fig-height: 3.5
+#| fig-format: svg
+#| fig-alt: "Scatter plot of points comparing 'feature 1' to 'feature 2'. 3 groupings are relativlely present."
 X_intro, _ = make_blobs(
     n_samples=300,
     centers=3,
@@ -88,7 +89,7 @@ plt.show()
 
 ## What is K-means Clustering?
 
-**K-means clustering** is an unsupervised learning tool that groups observations into a chosen number of clusters (K) based on feature similarity.
+**K-means clustering** is an unsupervised learning tool that groups observations into a chosen number of clusters (K) based on feature similarity. [@geeksforgeeks_kmeans] [@sklearn_kmeans]
 
 ```{python}
 from sklearn.cluster import KMeans
@@ -127,7 +128,7 @@ Unsupervised: what types of players are drafted from these picks? (salary vs win
 (picks 1-6 are high ceiling high risk/value, are picks 6-12 role players)
 Supervised: Can we predict this guy's points per game based on the pick he was drafted?
 :::
-
+[@ibm_supervised_unsupervised]
 
 ## K-means vs. KNN
 
@@ -138,7 +139,7 @@ Supervised: Can we predict this guy's points per game based on the pick he was d
 | **K = number of clusters** | **K = number of neighbors** |
 | Learns cluster centroids | Looks at nearby observations |
 |Example: Grouping pitches by characteristics | Example: Predicting whether a pitch is a fastball or slider|
-
+[@crossvalidated_kmeans_knn]
 
 
 ::: notes
@@ -156,7 +157,7 @@ data = pd.DataFrame(X, columns=["taste", "texture"])
 data.head()
 ```
 
-- 300 observations (simulated make_blobs dataset)
+- 300 observations (simulated make_blobs dataset from sk_learn) @sklearn_make_blobs
 - arbitrary theme: all the foods you've ever tried
 - 2 numerical features
     - Taste profile: lower = sweet, higher = savory
@@ -170,6 +171,8 @@ data.head()
 ## Step 2: Visualize the Data {.smaller}
 
 ```{python}
+#| fig-format: svg
+#| fig-alt: "The same scatterplot, now labelled with taste and texture axes."
 fig, ax = plt.subplots(figsize=(7, 4))
 ax.scatter(X[:, 0], X[:, 1], color=NAVY, s=28, alpha=0.8)
 ax.set(
@@ -188,9 +191,9 @@ What do you notice? Can we identify groups just by looking at the data?
 :::
 
 ## Step 3: Fit K-means with Python {.smaller}
-
+::::{.columns}
+::: {.column width="50%"}
 ```{python}
-#| output-location: column
 kmeans = KMeans(
     n_clusters=3,
     random_state=2026,
@@ -204,8 +207,15 @@ centers = pd.DataFrame(
 print(centers)
 ```
 
+- `n_clusters`: # clusters
+- `random_state`: set seed
+- `n_init`: # rounds (how many times new centroids are calculated, function returns best round)
+:::
+::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| #| fig-format: svg
+#| fig-alt: "The scatterplot, now with added centroids and coloring per-group."
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -240,6 +250,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+:::
+::::
 ::: notes
 negative taste = more sweet
 negative texture = more soft
@@ -327,10 +339,13 @@ but how do you choose k?
 
 
 ## Elbow Method for Choosing K
-::::{.columns}
-:::{.column width="60%"}
+:::::{.columns}
+
+::::{.column width="60%"}
+
 ::: {style="font-size: 0.85em;"}
-- Fit K-means for different values of K and measure **inertia** (within-cluster sum of squares).
+
+- Fit K-means for different values of K and measure **inertia** (within-cluster sum of squares). [@zalarushirajsinh_elbow]
 $$
 \operatorname{WCSS}
 = \sum_{k=1}^{K} \sum_{i\in C_k}
@@ -341,10 +356,13 @@ assigned to cluster $k$, $\mathbf{x}_i$ is observation $i$'s feature vector,
 and $\boldsymbol{\mu}_k$ is its cluster centroid.
 - Choose where the "elbow" is as K: where the WCSS decrease slows down
 :::
-:::
-::: {.column width="40%"}
+::::
+
+:::: {.column width="40%"}
 ```{python}
 #|echo: false
+#| fig-format: svg
+#| fig-alt: "A plot of intertia vs. amount of clusters - inertia decreases as clusters rises, but by less for every new cluster added."
 inertias = []
 for k in range(1, 11):
     model = KMeans(
@@ -366,8 +384,8 @@ plt.tight_layout()
 plt.show()
 ```
 
-:::
 ::::
+:::::
 ::: notes
 One way is to use the elbow method.
 WCSS basically means the sum of squared distance between obs in a cluster
@@ -415,9 +433,23 @@ Gap Statistic:
 
 :::
 
-## References
+## Key Takeaways
 
-[@geeksforgeeks_kmeans]
-[@crossvalidated_kmeans_knn]
-[@ibm_supervised_unsupervised]
-[@zalarushirajsinh_elbow]
+- K-means is an unsupervised learning algorithm that groups unlabeled observations based on 
+similarities in their features.
+- Clusters are formed around centroids by minimizing the within-cluster sum of squared 
+distances (WCSS).
+- Choosing K matters: The Elbow Method, Silhouette Score, and other techniques can help determine 
+the number of clusters.
+- Clusters aren't automatically meaningful, results can depend on initialization, and different 
+choices of K can produce different groupings.
+
+## AI Use Disclosure
+
+**AI use disclosure:** ChatGPT 5.6 Luna was used for code bug fixing
+and slide organization ideas.
+
+## References
+::: {#refs}
+
+:::
