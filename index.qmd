@@ -477,18 +477,18 @@ accepted.
 | 10/28 | Bucco, Sadie | Random Forests |
 | 11/02 | -- | No class in exchange of midterm-project time |
 | 11/04 | Tria, Nicholas | Naive Bayes |
-| 11/04 | Parkins, Jack | LLM Agents |
-| 11/09 | Chok, Isaac | [topic] |
+| 11/04 | Chok, Isaac | Principal Component Analysis (PCA) |
+| 11/09 | Parkins, Jack | LLM Agents |
 | 11/09 | Horan, Elizabeth | Support vector machines |
 | 11/11 | Distefano, Cristian | [topic] |
 | 11/11 | Nair, Pardhip | [topic] |
 | 11/11 | Morissette, Carter | [topic] |
-| 11/16 | Maras, Ruveyda | [topic] |
-| 11/16 | Wang, Leo | [topic] |
+| 11/16 | Maras, Ruveyda | False-discovery-rate control |
+| 11/16 | Wang, Leo | Agent Skills for Data Science |
 | 11/16 | Choudhury, Ruhama | Deep Learning |
-| 11/18 | Hartman, Mikaela | [topic] |
+| 11/18 | Hartman, Mikaela | Multidimensional Scaling |
 | 11/18 | Kiani, Ismail | [topic] |
-| 11/18 | Kelly, Daniel | [topic] |
+| 11/18 | Kelly, Daniel | Multiple Imputation for Missing Data |
 
 ### Final Project Presentation Schedule
 

@@ -6,8 +6,18 @@ prediction, dimension reduction, clustering, and supervised learning.
 Presentations will be added during the semester.
 
 **Topic Presentation**
-[K-Means Clustering](../topic/fontana-k-means) by Adam Fontana
-This presentation uses scikit-learn's make_blobs dataset to 
-demonstrate a K-Means clustering workflow from gathering the data to
-interpreting the results. It also demonstrates some applications
-and limitations of the algorithm.
+
+| Presentation | Presenter | Description |
+|:--|:--|:--|
+|[K-Means Clustering](../topic/fontana-k-means) | Adam Fontana | K-Means clustering. |
+| [Decision Trees](../topic/decision-trees/) | Mahiba Mansur | Classification. |
+| [Perfect Separation in Logistic Regression](../topic/morissette-separation/) | Carter Morissette | Limits of logistic regression. |
+
+The decision-tree presentation fits a small classifier using request fields
+available at creation, compares it with a majority baseline, and explains
+why accuracy alone can hide missed Illegal Parking requests.
+
+The perfect-separation presentation simulates a pass/fail example where one
+cutoff splits the outcomes perfectly, so logistic regression has no finite
+best slope. It shows the warning signs, then compares a ridge penalty and
+merged categories as fixes and previews Firth's method.
