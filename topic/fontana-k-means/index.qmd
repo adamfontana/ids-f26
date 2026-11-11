@@ -152,14 +152,15 @@ KNN uses the K closest observations to classify the obs in question
 ```{python}
 X, y_true = make_blobs(n_samples=300,centers=3,
     cluster_std=3.0, random_state=2026)
-data = pd.DataFrame(X, columns=["Taste Profile", "Texture Profile"])
+data = pd.DataFrame(X, columns=["taste", "texture"])
 data.head()
 ```
 
-- 300 observations (all the foods you've ever tried)
+- 300 observations (simulated make_blobs dataset)
+- arbitrary theme: all the foods you've ever tried
 - 2 numerical features
-    - Taste profile: -15 = sweet, 15 = savory
-    - Texture profile: -15 = soft, 15 = crunchy
+    - Taste profile: lower = sweet, higher = savory
+    - Texture profile: lower = soft, higher = crunchy
 
 ::: notes
 - What patterns appear in values of these 2 features?
@@ -186,9 +187,10 @@ What do you notice? Can we identify groups just by looking at the data?
 
 :::
 
-## Step 3: Fit K-means with Python
+## Step 3: Fit K-means with Python {.smaller}
 
 ```{python}
+#| output-location: column
 kmeans = KMeans(
     n_clusters=3,
     random_state=2026,
@@ -197,9 +199,45 @@ kmeans = KMeans(
 clusters = kmeans.fit_predict(X)
 centers = pd.DataFrame(
     kmeans.cluster_centers_,
-    columns=["Taste Profile", "Texture Profile"]
+    columns=["taste", "texture"]
 )
 print(centers)
+```
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+
+plt.figure(figsize=(7, 4))
+
+plt.scatter(
+    data["taste"], 
+    data["texture"], 
+    c=clusters, 
+    cmap="viridis", 
+    s=28, 
+    alpha=0.8, 
+)
+
+plt.scatter(
+    centers.iloc[:, 0], 
+    centers.iloc[:, 1], 
+    c="red", 
+    marker="X", 
+    s=200, 
+    edgecolors="black", 
+    label="Estimated Centers"
+)
+
+plt.title("Taste Scatterplot with Estimated K-Means Centers", fontsize=14)
+plt.xlabel("Taste (Sweet ---> Savory)", fontsize=12)
+plt.ylabel("Texture (Soft ---> Crunchy)", fontsize=12)
+plt.legend()
+plt.grid(True, linestyle="--", alpha=0.5)
+plt.tight_layout()
+
+plt.show()
 ```
 
 ::: notes
@@ -280,7 +318,7 @@ plt.close(fig)
 display(HTML(anim.to_jshtml()))
 ```
 
-:::{notes}
+::: notes
 each round, points are assigned to the center closest to it.
 then the centers moves to minimize the sum of squared dist between it and those points
 then repeat
@@ -291,16 +329,18 @@ but how do you choose k?
 ## Elbow Method for Choosing K
 ::::{.columns}
 :::{.column width="60%"}
+::: {style="font-size: 0.85em;"}
 - Fit K-means for different values of K and measure **inertia** (within-cluster sum of squares).
 $$
 \operatorname{WCSS}
 = \sum_{k=1}^{K} \sum_{i\in C_k}
 \lVert\mathbf{x}_i-\boldsymbol{\mu}_k\rVert_2^2,
 $$
-where $K$ = # clusters, $C_k$ is the index set of observations
+where $K$ is the number of clusters, $C_k$ is the index set of obs.
 assigned to cluster $k$, $\mathbf{x}_i$ is observation $i$'s feature vector,
 and $\boldsymbol{\mu}_k$ is its cluster centroid.
-- Choose where the "elbow" is as K
+- Choose where the "elbow" is as K: where the WCSS decrease slows down
+:::
 :::
 ::: {.column width="40%"}
 ```{python}
@@ -314,7 +354,7 @@ for k in range(1, 11):
     )
     model.fit(X)
     inertias.append(model.inertia_)
-fig, ax = plt.subplots(figsize=(7, 4))
+fig, ax = plt.subplots(figsize=(6, 3.5))
 ax.plot(range(1, 11), inertias, marker="o", color=NAVY)
 ax.set(
     xlabel="Number of Clusters (K)",
@@ -381,7 +421,3 @@ Gap Statistic:
 [@crossvalidated_kmeans_knn]
 [@ibm_supervised_unsupervised]
 [@zalarushirajsinh_elbow]
-
-## Thank you!
-
-Questions?
