@@ -2,7 +2,7 @@
 title: "K-Means Clustering"
 subtitle: "From start to finish + applications"
 author: "Adam Fontana"
-jupyter: ids-book-python
+jupyter: python3
 format:
   revealjs:
     width: 1280
