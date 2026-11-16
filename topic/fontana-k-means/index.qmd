@@ -61,7 +61,7 @@ plt.rcParams.update({
 #| fig-width: 7
 #| fig-height: 3.5
 #| fig-format: svg
-#| fig-alt: "Scatter plot of points comparing 'feature 1' to 'feature 2'. 3 groupings are relativlely present."
+#| fig-alt: "Scatterplot of 300 simulated observations with three visible groups."
 X_intro, _ = make_blobs(
     n_samples=300,
     centers=3,
@@ -105,7 +105,7 @@ kmeans = KMeans(n_clusters=3, random_state=2026)
 - Clustering groups observations based on similarities in their features.
 - K-means is an unsupervised learning algorithm that identifies these groups.
 - Does this by putting K points randomly on a board
-- minimizes the sum of squared euclidean distances (pythagorean theorem dist. 
+- minimizes the sum of squared euclidean distances (pythagorean theorem dist.
 b/w 2 pts) b/w a centroid and each of it's pts
 - before we get specifically into a workflow, a few things to go over
 :::
@@ -123,7 +123,7 @@ b/w 2 pts) b/w a centroid and each of it's pts
 ::: notes
 Labelled = outcome var
 Unlabelled = no outcome var, just some predictors from some samples
-Labeled Unlabelled Ex: NBA draft picks 
+Labeled Unlabelled Ex: NBA draft picks
 Unsupervised: what types of players are drafted from these picks? (salary vs win shares)
 (picks 1-6 are high ceiling high risk/value, are picks 6-12 role players)
 Supervised: Can we predict this guy's points per game based on the pick he was drafted?
@@ -222,21 +222,21 @@ import numpy as np
 plt.figure(figsize=(7, 4))
 
 plt.scatter(
-    data["taste"], 
-    data["texture"], 
-    c=clusters, 
-    cmap="viridis", 
-    s=28, 
-    alpha=0.8, 
+    data["taste"],
+    data["texture"],
+    c=clusters,
+    cmap="viridis",
+    s=28,
+    alpha=0.8,
 )
 
 plt.scatter(
-    centers.iloc[:, 0], 
-    centers.iloc[:, 1], 
-    c="red", 
-    marker="X", 
-    s=200, 
-    edgecolors="black", 
+    centers.iloc[:, 0],
+    centers.iloc[:, 1],
+    c="red",
+    marker="X",
+    s=200,
+    edgecolors="black",
     label="Estimated Centers"
 )
 
@@ -263,7 +263,7 @@ negative texture = more soft
 ```{python}
 #| echo: false
 K = 3
-rng = np.random.default_rng(7)
+rng = np.random.default_rng(2026)
 
 anim_centers = X[rng.choice(len(X), K, replace=False)].copy()
 frames = []
@@ -329,6 +329,9 @@ plt.close(fig)
 
 display(HTML(anim.to_jshtml()))
 ```
+
+The animation uses its own random starting centers (seed 2026). It illustrates
+the assignment and update steps; it does not show the fitted model's path.
 
 ::: notes
 each round, points are assigned to the center closest to it.
@@ -425,6 +428,7 @@ Gap Statistic:
 
 
 - Features with larger numerical ranges can dominate distance calculations
+- Standardize features measured on different scales before calculating distances.
 - Outliers can pull centroids away from the main groups
 - Different starting centroids can produce different results.
 - Clusters that K-Means finds aren't automatically meaningful.
@@ -435,13 +439,13 @@ Gap Statistic:
 
 ## Key Takeaways
 
-- K-means is an unsupervised learning algorithm that groups unlabeled observations based on 
+- K-means is an unsupervised learning algorithm that groups unlabeled observations based on
 similarities in their features.
-- Clusters are formed around centroids by minimizing the within-cluster sum of squared 
+- Clusters are formed around centroids by minimizing the within-cluster sum of squared
 distances (WCSS).
-- Choosing K matters: The Elbow Method, Silhouette Score, and other techniques can help determine 
+- Choosing K matters: The Elbow Method, Silhouette Score, and other techniques can help determine
 the number of clusters.
-- Clusters aren't automatically meaningful, results can depend on initialization, and different 
+- Clusters aren't automatically meaningful, results can depend on initialization, and different
 choices of K can produce different groupings.
 
 ## AI Use Disclosure
